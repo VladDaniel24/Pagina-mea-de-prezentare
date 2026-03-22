@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlad Daniel | Portofoliu Vizual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; cursor: default; background-color: #0c0a09; color: #f5f5f4; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Smooth Scroll Config */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        /* Fix pentru blocare fundal */
+        .modal-open { 
+            overflow: hidden !important; 
+            height: 100vh;
+        }
+
+        /* Animații Reveal Premium */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), 
+                        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Logo Focus Animation (V.D.) */
+        .logo-v, .logo-d {
+            display: inline-block;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+        .logo-container .logo-v { transform: translateX(-3px) rotate(-3deg); }
+        .logo-container .logo-d { transform: translateX(3px) rotate(3deg); }
+        
+        .logo-container.scrolled .logo-v { transform: translateX(1px) rotate(0deg); }
+        .logo-container.scrolled .logo-d { transform: translateX(-1px) rotate(0deg); }
+
+        /* Masonry Grid Setup */
+        .masonry-grid { column-count: 1; column-gap: 1rem; }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; column-gap: 1.5rem; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #0c0a09; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-xl border-b border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex justify-between items-center">
+            <a href="#" id="main-logo" class="logo-container serif italic text-xl md:text-2xl font-semibold tracking-tighter text-white flex items-center group">
+                <span class="logo-v">V.</span><span class="logo-d">D.</span>
+            </a>
+            <div class="flex space-x-8 md:space-x-12 text-[10px] uppercase tracking-[0.4em] font-medium text-stone-500">
+                <a href="#proiecte" class="hover:text-white transition-colors">Portofoliu</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="https://wa.me/40747463568" target="_blank" class="hidden sm:block bg-white text-stone-950 px-5 py-2.5 text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-all font-bold rounded-full shadow-lg">Let's Talk</a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center max-w-7xl mx-auto px-6 md:px-10 pt-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-center w-full">
+            <div class="md:col-span-7 reveal">
+                <span class="text-[10px] uppercase tracking-[0.6em] text-stone-600 mb-6 block">București, România</span>
+                <h1 class="serif text-5xl md:text-[7.5rem] leading-[1] mb-10 text-white">
+                    Estetică în <br><span class="italic text-stone-500">simplitate.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-stone-400 font-light leading-relaxed max-w-lg mb-10">
+                    Fiecare cadru este o poveste curată. Specializat în fotografie comercială și portrete de impact.
+                </p>
+                <a href="#proiecte" class="inline-block bg-white text-stone-950 px-8 md:px-10 py-4 text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-all font-bold rounded-full shadow-lg">Explorează Lucrările</a>
+            </div>
+            <div class="md:col-span-5 reveal" style="transition-delay: 200ms;">
+                <div class="overflow-hidden rounded-[40px] shadow-2xl aspect-[3/4] bg-stone-900 border border-stone-800/50">
+                    <img src="Imagini-portrete/P-23.jpg" alt="Hero Image" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="proiecte" class="max-w-7xl mx-auto px-6 md:px-10 py-32 md:py-48 border-t border-stone-900">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-4">
+            <h2 class="serif text-4xl md:text-5xl reveal italic text-white">Creative Directions</h2>
+            <p class="text-stone-600 text-[10px] uppercase tracking-widest reveal">Work Archive 2024—2025</p>
+        </div>
+        
+        <div class="space-y-40 md:space-y-64">
+            <div class="group relative grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-20 items-center reveal">
+                <div onclick="openModal('modalEvenimente')" 
+                     class="md:col-span-7 overflow-hidden bg-stone-900 aspect-[4/5] md:aspect-[16/10] cursor-pointer rounded-[2rem] shadow-2xl transition-all duration-700 active:scale-[0.98]">
+                    <img src="Imagini-evenimente/E-18.jpg" alt="Evenimente" 
+                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-[2s] ease-out">
+                </div>
+                <div class="md:col-span-5 md:pl-10">
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mb-4 block">01 / Documentary</span>
+                    <h3 class="serif text-4xl md:text-6xl mb-6 italic text-white leading-tight">Evenimente</h3>
+                    <p class="text-stone-400 font-light text-base md:text-lg mb-8 leading-relaxed max-w-sm">Documentare vizuală pentru evenimente corporate și momente private memorabile.</p>
+                    <button onclick="openModal('modalEvenimente')" class="group flex items-center space-x-6 text-[10px] uppercase tracking-[0.3em] font-bold text-white">
+                        <span>Vezi Galeria</span>
+                        <div class="w-10 h-[1px] bg-white group-hover:w-16 transition-all duration-500"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group relative grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-20 items-center reveal">
+                <div class="md:col-span-5 md:order-1 order-2 md:pr-10">
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mb-4 block">02 / Portraiture</span>
+                    <h3 class="serif text-4xl md:text-6xl mb-6 italic text-white leading-tight">Portrete</h3>
+                    <p class="text-stone-400 font-light text-base md:text-lg mb-8 leading-relaxed max-w-sm">Sesiuni focusate pe autenticitate și personal branding modern.</p>
+                    <button onclick="openModal('modalPortrete')" class="group flex items-center space-x-6 text-[10px] uppercase tracking-[0.3em] font-bold text-white">
+                        <span>Vezi Galeria</span>
+                        <div class="w-10 h-[1px] bg-white group-hover:w-16 transition-all duration-500"></div>
+                    </button>
+                </div>
+                <div onclick="openModal('modalPortrete')" 
+                     class="md:col-span-7 md:order-2 order-1 overflow-hidden bg-stone-900 aspect-[4/5] md:aspect-[3/4] cursor-pointer rounded-[2rem] shadow-2xl transition-all duration-700 active:scale-[0.98]">
+                    <img src="Imagini-portrete/P-10.jpg" alt="Portret" 
+                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-[2s] ease-out">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experienta" class="bg-stone-900/40 text-stone-100 py-32 md:py-40 border-y border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                <div class="reveal">
+                    <h2 class="serif text-4xl md:text-5xl mb-10 italic text-white leading-tight">Expertiză & <br>Viziune</h2>
+                    <p class="text-stone-400 font-light leading-relaxed text-lg max-w-sm mb-12">
+                        Fiecare proiect beneficiază de o abordare meticuloasă și post-procesare de înaltă finețe.
+                    </p>
+                    <div class="flex space-x-12">
+                        <div>
+                            <p class="text-3xl serif mb-1 text-white">20+</p>
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600">Clienți</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl serif mb-1 text-white">3 ani</p>
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600">Experiență</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-12 reveal" style="transition-delay: 200ms;">
+                    <div class="border-b border-stone-800 pb-6 flex justify-between items-end">
+                        <span class="serif text-xl md:text-2xl text-stone-200">Event Photography</span>
+                        <span class="text-stone-600 text-[9px] uppercase tracking-tighter italic">Professional</span>
+                    </div>
+                    <div class="border-b border-stone-800 pb-6 flex justify-between items-end">
+                        <span class="serif text-xl md:text-2xl text-stone-200">High-End Retouching</span>
+                        <span class="text-stone-600 text-[9px] uppercase tracking-tighter italic">Adobe Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="max-w-7xl mx-auto px-6 md:px-10 py-32 md:py-56 text-center reveal">
+        <h2 class="serif text-4xl md:text-8xl mb-12 italic text-stone-200">Let's connect.</h2>
+        <a href="mailto:vlad.daniel.2404@gmail.com" class="text-2xl md:text-5xl font-extralight text-stone-100 hover:text-stone-400 transition-all duration-700">vlad.daniel.2404@gmail.com</a>
+        <div class="flex justify-center space-x-12 pt-20">
+            <a href="https://www.instagram.com/vld_photo_" target="_blank" class="text-[10px] uppercase tracking-[0.4em] font-medium text-stone-600 hover:text-white transition">Instagram</a>
+            <a href="https://wa.me/40747463568" target="_blank" class="text-[10px] uppercase tracking-[0.4em] font-medium text-stone-600 hover:text-white transition">WhatsApp</a>
+        </div>
+    </footer>
+
+    <div id="modalEvenimente" class="fixed inset-0 z-[100] hidden opacity-0 transition-all duration-500 ease-in-out custom-scroll" role="dialog">
+        <div class="absolute inset-0 bg-stone-950/98 backdrop-blur-2xl" onclick="closeModal('modalEvenimente')"></div>
+        <div class="relative w-full h-screen overflow-y-auto px-4 md:px-8 py-16 md:py-24 overscroll-contain" data-lenis-prevent>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-16 text-white">
+                    <h3 class="serif text-3xl md:text-4xl italic">Archive / Evenimente</h3>
+                    <button onclick="closeModal('modalEvenimente')" class="text-[10px] uppercase tracking-[0.4em] text-stone-600 hover:text-white transition">Close [×]</button>
+                </div>
+                <div class="masonry-grid">
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-1.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-2.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-3.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-4.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-5.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-6.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-7.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-8.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-9.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-10.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-11.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-12.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-13.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-14.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-15.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-16.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-17.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-18.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-19.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-20.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-21.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-22.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                    <div class="masonry-item"><img src="Imagini-evenimente/E-23.jpg" class="w-full rounded-sm shadow-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalPortrete" class="fixed inset-0 z-[100] hidden opacity-0 transition-all duration-500 ease-in-out custom-scroll" role="dialog">
+        <div class="absolute inset-0 bg-stone-950/98 backdrop-blur-2xl" onclick="closeModal('modalPortrete')"></div>
+        <div class="relative w-full h-screen overflow-y-auto px-4 md:px-6 py-12 md:py-20 overscroll-contain" data-lenis-prevent>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-10 md:mb-16 text-white">
+                    <h3 class="serif text-2xl md:text-4xl italic">Archive / Portrete</h3>
+                    <button onclick="closeModal('modalPortrete')" class="text-[10px] uppercase tracking-widest text-stone-500 hover:text-white transition">Close [×]</button>
+                </div>
+                <div class="masonry-grid">
+                    <div class="masonry-item"><img src="Imagini-portrete/P-1.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-2.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-3.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-4.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-5.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-6.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-7.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-8.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-9.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-10.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-11.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-12.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-13.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-14.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-15.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-16.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-17.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-18.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-19.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-20.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-21.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-22.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-23.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-24.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-25.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-26.jpg" class="w-full rounded-sm shadow-lg"></div>
+                    <div class="masonry-item"><img src="Imagini-portrete/P-27.jpg" class="w-full rounded-sm shadow-lg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('opacity-100'), 10);
+            document.body.classList.add('modal-open');
+            lenis.stop(); 
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+                lenis.start(); 
+            }, 700);
+        }
+
+        function checkScroll() {
+            const logo = document.getElementById('main-logo');
+            if (window.scrollY > 50) {
+                logo.classList.add('scrolled');
+            } else {
+                logo.classList.remove('scrolled');
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                const openM = document.querySelector('[id^="modal"]:not(.hidden)');
+                if (openM) closeModal(openM.id);
+            }
+        });
+    </script>
+</body>
+</html>
