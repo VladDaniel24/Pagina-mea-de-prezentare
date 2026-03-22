@@ -181,14 +181,17 @@
         </div>
     </footer>
 
-    <div id="modalEvenimente" class="fixed inset-0 z-[100] hidden opacity-0 transition-all duration-500 ease-in-out custom-scroll" role="dialog">
+    <div id="modalEvenimente" class="fixed inset-0 z-[100] hidden opacity-0 transition-all duration-700 ease-in-out custom-scroll" role="dialog">
         <div class="absolute inset-0 bg-stone-950/98 backdrop-blur-2xl" onclick="closeModal('modalEvenimente')"></div>
-        <div class="relative w-full h-screen overflow-y-auto px-4 md:px-8 py-16 md:py-24 overscroll-contain" data-lenis-prevent>
-            <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between items-center mb-16 text-white">
-                    <h3 class="serif text-3xl md:text-4xl italic">Archive / Evenimente</h3>
-                    <button onclick="closeModal('modalEvenimente')" class="text-[10px] uppercase tracking-[0.4em] text-stone-600 hover:text-white transition">Close [×]</button>
+        <div class="relative w-full h-screen overflow-y-auto overscroll-contain" data-lenis-prevent>
+            <div class="sticky top-0 z-50 bg-stone-950/80 backdrop-blur-md border-b border-stone-900 px-6 md:px-10 py-6 mb-12">
+                <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
+                    <h3 class="serif text-2xl md:text-3xl italic">Archive / Evenimente</h3>
+                    <button onclick="closeModal('modalEvenimente')" class="text-[10px] uppercase tracking-[0.4em] text-stone-500 hover:text-white transition-all">Close [×]</button>
                 </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 md:px-10 pb-32">
                 <div class="masonry-grid">
                     <div class="masonry-item"><img src="Imagini-evenimente/E-1.jpg" class="w-full rounded-sm shadow-2xl"></div>
                     <div class="masonry-item"><img src="Imagini-evenimente/E-2.jpg" class="w-full rounded-sm shadow-2xl"></div>
@@ -220,12 +223,15 @@
 
     <div id="modalPortrete" class="fixed inset-0 z-[100] hidden opacity-0 transition-all duration-500 ease-in-out custom-scroll" role="dialog">
         <div class="absolute inset-0 bg-stone-950/98 backdrop-blur-2xl" onclick="closeModal('modalPortrete')"></div>
-        <div class="relative w-full h-screen overflow-y-auto px-4 md:px-6 py-12 md:py-20 overscroll-contain" data-lenis-prevent>
-            <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between items-center mb-10 md:mb-16 text-white">
-                    <h3 class="serif text-2xl md:text-4xl italic">Archive / Portrete</h3>
-                    <button onclick="closeModal('modalPortrete')" class="text-[10px] uppercase tracking-widest text-stone-500 hover:text-white transition">Close [×]</button>
+        <div class="relative w-full h-screen overflow-y-auto overscroll-contain" data-lenis-prevent>
+            <div class="sticky top-0 z-50 bg-stone-950/80 backdrop-blur-md border-b border-stone-900 px-6 md:px-10 py-6 mb-12">
+                <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
+                    <h3 class="serif text-2xl md:text-3xl italic">Archive / Portrete</h3>
+                    <button onclick="closeModal('modalPortrete')" class="text-[10px] uppercase tracking-[0.4em] text-stone-500 hover:text-white transition-all">Close [×]</button>
                 </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 md:px-10 pb-32">
                 <div class="masonry-grid">
                     <div class="masonry-item"><img src="Imagini-portrete/P-1.jpg" class="w-full rounded-sm shadow-lg"></div>
                     <div class="masonry-item"><img src="Imagini-portrete/P-2.jpg" class="w-full rounded-sm shadow-lg"></div>
